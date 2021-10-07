@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>hesap makinesi</title>
+    <style>
+      body {
+        background: rgb(208, 205, 255);
+        background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+      }
+
+      #sayi2 {
+        margin-left: 17px;
+      }
+
+      .container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+
+      button {
+        width: 30px;
+        height: 30px;
+      }
+
+      button:active {
+        border: 1px blue solid;
+      }
+
+      .btn-container {
+        margin-top: 5px;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input {
+        font-size: 1.5rem;
+        width: 92px;
+        padding: 10px;
+        text-align: center;
+        margin: 10px;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>200601031 / Alperen Çorak / BİL209 - Web Tabanlı Programlamaya Giriş</h3>
+      <h2>Hesap Makinesi</h2>
+      <div>
+        <label>Birinci Sayı : </label>
+        <input type="number" name="numara1" id="sayi1">
+      </div>
+      <div>
+        <label>İkinci Sayı : </label>
+        <input type="number" name="numara2" id="sayi2">
+      </div>
+      <div class="btn-container">
+        <button class="btn" onclick="topla()">+</button>
+        <button class="btn" onclick="cikar()">-</button>
+        <button class="btn" onclick="carp()">&times</button>
+        <button class="btn" onclick="bol()">/</button>
+      </div>
+      <p class="sonuc">Sonuç = 0</p>
+    </div>
+    <script>
+      const sayi1 = document.querySelector("#sayi1");
+      const sayi2 = document.querySelector("#sayi2");
+      const sonuc = document.querySelector(".sonuc");
+
+      function topla() {
+        let s1 = parseInt(sayi1.value);
+        let s2 = parseInt(sayi2.value);
+        let snc = s1 + s2;
+        sonuc.innerHTML = "Sonuç = " + snc;
+      }
+
+      function cikar() {
+        let s1 = parseInt(sayi1.value);
+        let s2 = parseInt(sayi2.value);
+        let snc = s1 - s2;
+        sonuc.innerHTML = "Sonuç = " + snc;
+      }
+
+      function carp() {
+        let s1 = parseInt(sayi1.value);
+        let s2 = parseInt(sayi2.value);
+        let snc = s1 * s2;
+        sonuc.innerHTML = "Sonuç = " + snc;
+      }
+
+      function bol() {
+        let s1 = parseInt(sayi1.value);
+        let s2 = parseInt(sayi2.value);
+        let snc = s1 / s2;
+        sonuc.innerHTML = "Sonuç = " + snc;
+      }
+    </script>
+  </body>
+</html>
